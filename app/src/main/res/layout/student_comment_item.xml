@@ -35,7 +35,7 @@
         android:background="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/textView19"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="42dp">
+        tools:layout_editor_absoluteX="42dp" />
 
     <TextView
         android:id="@+id/textView20"
@@ -128,21 +128,6 @@
 
     <TextView
         android:id="@+id/tvStudentCommentComment"
-        android:layout_width="339dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/main_blue"
-        android:padding="3dp"
-        android:text="one of the first classes I ever took here, and even tho I'd taken honors psych in hs (with an A grade) his teaching left me crying over his book for hours. scheduled tests on days right after holidays so I never could celebrate and scheduled the final for friday at 3 pm. I was the last to leave my dorm for the summer. test files saved my grade."
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvStudentCommentTextBook"
-        tools:layout_editor_absoluteX="40dp"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tvStudentCommentComment3"
         android:layout_width="339dp"
         android:layout_height="73dp"
         android:layout_marginTop="5dp"

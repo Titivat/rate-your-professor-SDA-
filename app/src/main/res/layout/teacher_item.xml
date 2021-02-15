@@ -9,14 +9,14 @@
 
     <View
         android:id="@+id/myRectangleView"
-        android:layout_width="385dp"
-        android:layout_height="227dp"
+        android:layout_width="377dp"
+        android:layout_height="211dp"
         android:background="@color/main_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
+    <TextView
         android:id="@+id/vSplitLine1"
         android:layout_width="372dp"
         android:layout_height="5dp"
@@ -27,7 +27,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/tvTeacherItemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -49,7 +49,7 @@
         android:textColor="@color/gray"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@+id/myRectangleView"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/tvTeacherItemName"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -66,18 +66,18 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivTeacherItemStar"
         android:layout_width="36dp"
         android:layout_height="38dp"
         android:layout_marginStart="172dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintStart_toEndOf="@+id/tvTeacherItemName"
         app:layout_constraintTop_toBottomOf="@+id/vSplitLine1"
         app:srcCompat="@drawable/ic_yellow_star"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tvTeacherItemRatting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -86,12 +86,12 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/myRectangleView"
         app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/ivTeacherItemStar"
         app:layout_constraintTop_toBottomOf="@+id/vSplitLine1"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/tvTeacherItemTakeAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -100,11 +100,11 @@
         app:layout_constraintEnd_toEndOf="@+id/myRectangleView"
         app:layout_constraintHorizontal_bias="0.889"
         app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/tvTeacherItemRatting"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/tvTeacherItemDifficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="@+id/myRectangleView"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/tvTeacherItemTakeAgain"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
