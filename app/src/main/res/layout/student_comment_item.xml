@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/vRectangleView"
+        android:layout_width="373dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="PSYCH104 "
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/vRectangleView"
+        app:layout_constraintTop_toTopOf="@+id/vRectangleView" />
+
+    <View
+        android:id="@+id/vStudentCommentSplitLine1"
+        android:layout_width="95dp"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="42dp">
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="For Credit:"
+        android:textSize="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/vStudentCommentSplitLine1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="42dp" />
+
+    <TextView
+        android:id="@+id/tvStudentCommentCredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="9dp"
+        android:text="Yes"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Attendance:"
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="42dp" />
+
+    <TextView
+        android:id="@+id/tvStudentCommentAttendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Not Mandatory"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/tvStudentCommentCredit"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Grade:"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="42dp" />
+
+    <TextView
+        android:id="@+id/tvStudentCommentGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:text="B-"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/tvStudentCommentAttendance"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Textbook:"
+        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="42dp" />
+
+    <TextView
+        android:id="@+id/tvStudentCommentTextBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Yes"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/tvStudentCommentGrade"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvStudentCommentComment"
+        android:layout_width="339dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/main_blue"
+        android:padding="3dp"
+        android:text="one of the first classes I ever took here, and even tho I'd taken honors psych in hs (with an A grade) his teaching left me crying over his book for hours. scheduled tests on days right after holidays so I never could celebrate and scheduled the final for friday at 3 pm. I was the last to leave my dorm for the summer. test files saved my grade."
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvStudentCommentTextBook"
+        tools:layout_editor_absoluteX="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvStudentCommentComment3"
+        android:layout_width="339dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/main_blue"
+        android:padding="3dp"
+        android:text="one of the first classes I ever took here, and even tho I'd taken honors psych in hs (with an A grade) his teaching left me crying over his book for hours. scheduled tests on days right after holidays so I never could celebrate and scheduled the final for friday at 3 pm. I was the last to leave my dorm for the summer. test files saved my grade."
+        android:textAlignment="textStart"
+        android:textColor="@color/gray"
+        android:textSize="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvStudentCommentTextBook"
+        tools:layout_editor_absoluteX="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvStudentCommentRatting"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/red"
+        android:padding="3dp"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:text="10.0"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/vRectangleView"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toTopOf="@+id/vRectangleView"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvStudentCommentDifficulty"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="80dp"
+        android:background="@color/light_blue"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="5.0"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/vRectangleView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvStudentCommentAttendance"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="94dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
