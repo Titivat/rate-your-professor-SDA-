@@ -14,11 +14,17 @@ class MainActivity : AppCompatActivity() {
 
         todoAdapter = TeacherAdapter( mutableListOf() )
 
-        var item1 = TeacherInfo("Mark Haug", 2, 26, 4.5F)
+        var item1 = TeacherInfo("Mark Haug", 2F, 26, 4.5F)
         todoAdapter.addTodo( item1 )
 
-        var item2 = TeacherInfo("Craig Martin ", 3, 100, 3.9F)
+        var item2 = TeacherInfo("Craig Martin ", 3F, 100, 3.9F)
         todoAdapter.addTodo( item2 )
+
+        var item3 = TeacherInfo("David Holmes ", 4F, 30, 2.9F)
+        todoAdapter.addTodo( item3 )
+
+        var item4 = TeacherInfo("Jeffrey Lang ", 4.6F, 30, 1.6F)
+        todoAdapter.addTodo( item4 )
 
         rvTeacherInfo.adapter = todoAdapter
         rvTeacherInfo.layoutManager = LinearLayoutManager( this)
