@@ -46,7 +46,7 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
             teacherItem.setOnClickListener {
                 //intent = Intent(context, ProfesorInfo::class.java)
                 val intent = Intent(context, ProfesorInfo::class.java)
-
+                intent.putExtra("Username","John Doe")
                 context.startActivity( intent )
 
             }
