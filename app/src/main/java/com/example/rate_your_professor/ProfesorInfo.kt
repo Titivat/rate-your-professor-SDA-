@@ -15,7 +15,7 @@ class ProfesorInfo : AppCompatActivity() {
         }
 
         btnRateProfessor.setOnClickListener{
-            startActivity(Intent(this, RattingProfeso::class.java))
+            startActivity(Intent(this, RattingProfesor::class.java))
         }
 
 

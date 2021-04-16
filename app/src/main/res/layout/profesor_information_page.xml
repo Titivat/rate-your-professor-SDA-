@@ -17,7 +17,7 @@
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toEndOf="@+id/fab"
+        app:layout_constraintStart_toEndOf="@+id/bthBack"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
