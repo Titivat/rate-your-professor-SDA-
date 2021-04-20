@@ -1,7 +1,7 @@
 package com.example.rate_your_professor
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,4 +29,5 @@ class MainActivity : AppCompatActivity() {
         rvTeacherInfo.adapter = todoAdapter
         rvTeacherInfo.layoutManager = LinearLayoutManager( this)
     }
+
 }

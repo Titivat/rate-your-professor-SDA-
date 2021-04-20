@@ -34,12 +34,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <ImageView
         android:id="@+id/btnInfoBack2"
         android:layout_width="46dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_yellow_star"
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -62,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:text="2/5"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +74,7 @@
         android:id="@+id/tvInfoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="Mark Haug"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,7 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Student comment"
+        android:text="Student comment:"
         android:textSize="25dp"
         app:layout_constraintTop_toBottomOf="@+id/btnRateProfessor"
         tools:ignore="MissingConstraints"
@@ -167,10 +168,10 @@
         android:id="@+id/rvStudentComment"
         android:layout_width="392dp"
         android:layout_height="314dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/vInfoSplitLine12"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-14dp" />
+        tools:layout_editor_absoluteX="-2dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

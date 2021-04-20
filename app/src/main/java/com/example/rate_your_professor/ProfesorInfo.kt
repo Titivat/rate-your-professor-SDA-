@@ -41,6 +41,6 @@ class ProfesorInfo : AppCompatActivity() {
         rvStudentComment.adapter = studentCommentAdapter
         rvStudentComment.layoutManager = LinearLayoutManager( this)
 
-
     }
+
 }

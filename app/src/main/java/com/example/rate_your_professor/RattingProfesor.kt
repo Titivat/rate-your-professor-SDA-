@@ -15,5 +15,21 @@ class RattingProfesor : AppCompatActivity() {
             startActivity(Intent(this, ProfesorInfo::class.java))
         }
 
+        btnSummit.setOnClickListener{
+            this.handleSummit()
+        }
+
+    }
+
+    fun handleSummit(){
+        val comment = etComment.text.toString()
+        val couseCode = etCouseCode.text.toString()
+        val rateProfesor = sbRate.getProgress()
+        val grade = spGrade.getSelectedItem().toString();
+        val difficulty = sbDifficulty.getProgress()
+        val have_takeAgain = swTakeAgain.isChecked()
+        val have_takeCredit = swTakeCredit.isChecked()
+        val have_textBook = swTextBook.isChecked()
+        val have_attendance = swAttendance.isChecked()
     }
 }
