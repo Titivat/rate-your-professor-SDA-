@@ -1,6 +1,7 @@
 package com.example.rate_your_professor
 
 import android.os.Bundle
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,6 +29,22 @@ class MainActivity : AppCompatActivity() {
 
         rvTeacherInfo.adapter = todoAdapter
         rvTeacherInfo.layoutManager = LinearLayoutManager( this)
+
+        svSeach.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if (query != null) {
+                    todoAdapter.filter(query)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    todoAdapter.filter(newText)
+                }
+                return true
+            }
+        })
     }
 
 }
