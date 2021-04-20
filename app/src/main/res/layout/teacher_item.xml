@@ -78,7 +78,6 @@
         android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toTopOf="@+id/tvTeacherItemTakeAgain"
         app:layout_constraintEnd_toStartOf="@+id/tvTeacherItemRatting"
-        app:srcCompat="@drawable/ic_yellow_star"
         tools:ignore="MissingConstraints" />
 
     <TextView

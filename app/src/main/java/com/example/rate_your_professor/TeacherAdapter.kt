@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.teacher_item.view.*
 
@@ -44,6 +45,8 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
             tvTeacherItemTakeAgain.text = curTodo.wouldTakeAgainPercen.toString() + "%"
             tvTeacherItemDifficulty.text = curTodo.levelOfDifficulty.toString()
 
+            setStarBackground( curTodo.ratting.toString() , ivTeacherItemStar)
+
             teacherItem.setOnClickListener {
                 val intent = Intent(context, ProfesorInfo::class.java)
                 intent.putExtra("Username","John Doe")
@@ -51,6 +54,25 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
 
             }
         }
+    }
+
+    fun setStarBackground(ratting: String, imageView: ImageView){
+        val rattingNumber = ratting.toFloat()
+        when {
+            rattingNumber > 4.5 -> {
+                imageView.setBackgroundResource(R.drawable.ic_yellow_star);
+            }
+            rattingNumber > 3.5 -> {
+                imageView.setBackgroundResource(R.drawable.ic_green_star);
+            }
+            rattingNumber > 2.5 -> {
+                imageView.setBackgroundResource(R.drawable.ic_orange_star);
+            }
+            else -> {
+                imageView.setBackgroundResource(R.drawable.ic_red_star);
+            }
+        }
+
     }
 
     fun filter(text: String) {
@@ -63,7 +85,7 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
                 teacherList.addAll(tempTeacherList)
             }
             text.isEmpty() -> {
-                teacherList.addAll(itemsCopy)
+                teacherList.addAll(tempTeacherList)
             }
             else -> {
                 var text = text.toLowerCase()
