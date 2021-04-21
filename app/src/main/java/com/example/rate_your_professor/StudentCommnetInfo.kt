@@ -7,6 +7,6 @@ data class StudentCommnetInfo(
         var grade: String,
         var textBook: String,
         var comment: String,
-        var studyAgain: String,
+        var quality: String,
         var ratting: String = ""
 )

@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/tvCommentId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -36,7 +36,7 @@
         android:layout_marginStart="20dp"
         android:background="@color/black"
         app:layout_constraintStart_toStartOf="@+id/vRectangleView"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/tvCommentId"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -60,7 +60,7 @@
         android:text="Yes"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/tvCommentId"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -161,7 +161,7 @@
         android:textColor="@color/black"
         android:textSize="10dp"
         app:layout_constraintEnd_toEndOf="@+id/vRectangleView"
-        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintStart_toEndOf="@+id/tvCommentId"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
         tools:ignore="MissingConstraints" />
 
@@ -192,7 +192,7 @@
         android:layout_marginTop="10dp"
         android:text="QUALITY"
         app:layout_constraintEnd_toEndOf="@+id/vRectangleView"
-        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintStart_toEndOf="@+id/tvCommentId"
         app:layout_constraintTop_toTopOf="@+id/vRectangleView"
         tools:ignore="MissingConstraints" />
 

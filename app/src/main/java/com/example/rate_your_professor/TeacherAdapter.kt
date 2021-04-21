@@ -40,18 +40,28 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
 
 
         holder.itemView.apply {
-            tvTeacherItemName.text = curTodo.teacherName
-            tvTeacherItemRatting.text = (curTodo.ratting.toString() + "/" + "5")
-            tvTeacherItemTakeAgain.text = curTodo.wouldTakeAgainPercen.toString() + "%"
-            tvTeacherItemDifficulty.text = curTodo.levelOfDifficulty.toString()
+            val ratting = curTodo.ratting.toString()
+            val teacherName = curTodo.teacherName
+            val takeAgainPercent = curTodo.wouldTakeAgainPercen.toString()
+            val difficultyLevel = curTodo.levelOfDifficulty.toString()
 
-            setStarBackground( curTodo.ratting.toString() , ivTeacherItemStar)
+            tvTeacherItemName.text = teacherName
+            tvTeacherItemRatting.text = ("$ratting/5")
+            tvTeacherItemTakeAgain.text = ("$takeAgainPercent%")
+            tvTeacherItemDifficulty.text = difficultyLevel
+
+            setStarBackground( ratting , ivTeacherItemStar)
 
             teacherItem.setOnClickListener {
-                val intent = Intent(context, ProfesorInfo::class.java)
-                intent.putExtra("Username","John Doe")
-                context.startActivity( intent )
+                val teacherInfo = HashMap<String, String>()
+                teacherInfo["ratting"] = ratting
+                teacherInfo["teacherName"] = teacherName
+                teacherInfo["takeAgainPercent"] = takeAgainPercent
+                teacherInfo["difficultyLevel"] = difficultyLevel
 
+                val intent = Intent(context, ProfesorInfoPage::class.java)
+                intent.putExtra("TeacherInfo", teacherInfo)
+                context.startActivity( intent )
             }
         }
     }

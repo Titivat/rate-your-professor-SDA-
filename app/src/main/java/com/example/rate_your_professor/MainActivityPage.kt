@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivityPage : AppCompatActivity() {
     private lateinit var todoAdapter: TeacherAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

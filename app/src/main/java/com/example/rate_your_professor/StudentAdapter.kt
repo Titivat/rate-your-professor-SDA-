@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.student_comment_item.view.*
 import kotlinx.android.synthetic.main.teacher_item.view.*
 
 class StudentAdapter( private val studentCommentList: MutableList<StudentCommnetInfo> ) : RecyclerView.Adapter<StudentAdapter.TodoViewHolder>(){
@@ -35,6 +36,14 @@ class StudentAdapter( private val studentCommentList: MutableList<StudentCommnet
         val curTodo = studentCommentList[position]
 
         holder.itemView.apply {
+            tvCommentId.text = curTodo.commentId
+            tvStudentCommentCredit.text = curTodo.credit
+            tvStudentCommentAttendance.text = curTodo.attendance
+            tvStudentCommentGrade.text = curTodo.grade
+            tvStudentCommentTextBook.text = curTodo.textBook
+            tvStudentCommentRatting.text = curTodo.quality
+            tvStudentCommentDifficulty.text = curTodo.ratting
+            tvStudentCommentComment.text = curTodo.comment
         }
 
     }
