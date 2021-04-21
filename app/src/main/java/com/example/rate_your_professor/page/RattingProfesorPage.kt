@@ -56,7 +56,6 @@ class RattingProfesorPage : AppCompatActivity() {
 
             override fun onResponse(call: Call<SummitModel>, response: Response<SummitModel>) {
                 if (response.isSuccessful){
-                    Log.v("xxxxxx", response.toString())
                     Toast.makeText(this@RattingProfesorPage,"Successful",Toast.LENGTH_SHORT).show()
                 }
             }
