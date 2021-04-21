@@ -1,4 +1,4 @@
-package com.example.rate_your_professor
+package com.example.rate_your_professor.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.rate_your_professor.page.ProfesorInfoPage
+import com.example.rate_your_professor.R
+import com.example.rate_your_professor.model.pageList.TeacherInfo
 import kotlinx.android.synthetic.main.teacher_item.view.*
 
 class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : RecyclerView.Adapter<TeacherAdapter.TodoViewHolder>(){
@@ -16,11 +19,11 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(
-                LayoutInflater.from(parent.context).inflate(
-                        R.layout.teacher_item,
-                        parent,
-                        false
-                )
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.teacher_item,
+                parent,
+                false
+            )
         )
 
     }

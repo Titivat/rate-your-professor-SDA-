@@ -10,17 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rate_Your_Professor">
-        <activity android:name=".RattingProfesorPage"></activity>
-        <activity android:name=".MainActivityPage">
+        <activity android:name=".page.RattingProfesorPage"></activity>
+        <activity android:name=".page.MainActivityPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfesorInfoPage" />
+        <activity android:name=".page.ProfesorInfoPage" />
         <activity
-            android:name=".TeacherAdapter"
+            android:name=".adapter.TeacherAdapter"
             tools:ignore="Instantiatable" />
     </application>
 

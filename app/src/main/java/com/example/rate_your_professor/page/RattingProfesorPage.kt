@@ -1,12 +1,14 @@
-package com.example.rate_your_professor
+package com.example.rate_your_professor.page
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.rate_your_professor.api.ProfessorInfoApi
+import com.example.rate_your_professor.R
+import com.example.rate_your_professor.model.apiCall.summitInfo.SummitModel
 import kotlinx.android.synthetic.main.activity_ratting_profesos.*
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,18 +41,22 @@ class RattingProfesorPage : AppCompatActivity() {
         val haveTextBook = swTextBook.isChecked
         val haveAttendance = swAttendance.isChecked
 
-        val data = SummitModel("morpheus","leader")
+        val data = SummitModel(
+                "morpheus",
+                "leader"
+        )
         this.callApi(data)
     }
 
-    fun callApi(data: SummitModel) {
-        ProfesorInfoApi().postSummit( data ).enqueue( object : Callback<SummitModel> {
+    private fun callApi(data: SummitModel) {
+        ProfessorInfoApi().postSummit( data ).enqueue( object : Callback<SummitModel> {
             override fun onFailure(call: Call<SummitModel>, t: Throwable) {
                 t.printStackTrace()
             }
 
             override fun onResponse(call: Call<SummitModel>, response: Response<SummitModel>) {
                 if (response.isSuccessful){
+                    Log.v("xxxxxx", response.toString())
                     Toast.makeText(this@RattingProfesorPage,"Successful",Toast.LENGTH_SHORT).show()
                 }
             }

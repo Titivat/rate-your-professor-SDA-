@@ -1,4 +1,4 @@
-package com.example.rate_your_professor
+package com.example.rate_your_professor.model.pageList
 
 data class TeacherInfo(
         var teacherName: String,
