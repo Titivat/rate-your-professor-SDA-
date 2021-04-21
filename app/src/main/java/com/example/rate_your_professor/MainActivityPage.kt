@@ -1,10 +1,14 @@
 package com.example.rate_your_professor
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivityPage : AppCompatActivity() {
     private lateinit var todoAdapter: TeacherAdapter
@@ -27,6 +31,8 @@ class MainActivityPage : AppCompatActivity() {
         var item4 = TeacherInfo("Jeffrey Lang ", 4.6F, 30, 1.6F)
         todoAdapter.addTodo( item4 )
 
+        //this.callApi()
+
         rvTeacherInfo.adapter = todoAdapter
         rvTeacherInfo.layoutManager = LinearLayoutManager( this)
 
@@ -43,6 +49,23 @@ class MainActivityPage : AppCompatActivity() {
                     todoAdapter.filter(newText)
                 }
                 return true
+            }
+        })
+    }
+
+    fun callApi(){
+        ProfesorInfoApi().getProfesorInfo().enqueue(object : Callback<List<ProfesorInfoModel>> {
+            override fun onFailure(call: Call<List<ProfesorInfoModel>>, t: Throwable) {
+                t.printStackTrace()
+            }
+            override fun onResponse(
+                call: Call<List<ProfesorInfoModel>>,
+                response: Response<List<ProfesorInfoModel>>
+            ) {
+                response.body()?.let {
+                    Log.v("xxxxxx", it.toString())
+                    //todoAdapter.setTeacherInfo(it)
+                }
             }
         })
     }
