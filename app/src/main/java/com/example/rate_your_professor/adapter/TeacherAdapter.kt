@@ -1,6 +1,7 @@
 package com.example.rate_your_professor.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,8 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rate_your_professor.page.ProfesorInfoPage
 import com.example.rate_your_professor.R
+import com.example.rate_your_professor.model.apiCall.profesorInfo.ProfessorData
+import com.example.rate_your_professor.model.apiCall.profesorInfo.ProfessorModel
 import com.example.rate_your_professor.model.pageList.TeacherInfo
 import kotlinx.android.synthetic.main.teacher_item.view.*
 
@@ -32,6 +35,22 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
         tempTeacherList.add( teacherInfo )
         teacherList.add( teacherInfo )
         notifyItemInserted( teacherList.size - 1 )
+    }
+
+    fun setTeacherInfo( professorModel: ProfessorModel) {
+        var list = listOf<ProfessorData>()
+        list = professorModel.data
+
+        for (item in list) {
+            var newItem = TeacherInfo(
+                    item.first_name,
+                    2F,
+                    26,
+                    4.5F
+            )
+            this.addTodo( newItem )
+        }
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
@@ -69,7 +88,7 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
         }
     }
 
-    fun setStarBackground(ratting: String, imageView: ImageView){
+    private fun setStarBackground(ratting: String, imageView: ImageView){
         val rattingNumber = ratting.toFloat()
         when {
             rattingNumber > 4.5 -> {

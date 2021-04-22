@@ -1,6 +1,7 @@
 package com.example.rate_your_professor.page
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,7 +23,6 @@ class MainActivityPage : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         professorInfoAdapter = TeacherAdapter(mutableListOf())
-
         var item1 = TeacherInfo(
                 "Mark Haug",
                 2F,
@@ -86,7 +86,8 @@ class MainActivityPage : AppCompatActivity() {
 
             override fun onResponse(call: Call<ProfessorModel>, response: Response<ProfessorModel>) {
                 response.body()?.let {
-                    //professorInfoAdapter.setTeacherInfo(it)
+                    Log.v("xxxxxx", "I am here")
+                    professorInfoAdapter.setTeacherInfo(it)
                 }
             }
 
