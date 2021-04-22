@@ -15,7 +15,7 @@ interface ProfessorInfoApi{
     @GET("users?page=2")
     fun getProfessorInfo(): Call<ProfessorModel>
 
-    @GET("users/2")
+    @GET("unknown")
     fun getStudentCommentInfo(): Call<StudentComment>
 
     @POST("users")

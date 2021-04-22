@@ -86,7 +86,6 @@ class MainActivityPage : AppCompatActivity() {
 
             override fun onResponse(call: Call<ProfessorModel>, response: Response<ProfessorModel>) {
                 response.body()?.let {
-                    Log.v("xxxxxx", "I am here")
                     professorInfoAdapter.setTeacherInfo(it)
                 }
             }
