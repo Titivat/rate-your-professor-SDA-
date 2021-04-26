@@ -39,14 +39,14 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
 
     fun setTeacherInfo( professorModel: ProfessorModel) {
         var list = listOf<ProfessorData>()
-        list = professorModel.data
+        list = professorModel.professors
 
         for (item in list) {
             var newItem = TeacherInfo(
-                    item.first_name,
-                    2F,
-                    26,
-                    4.5F
+                    item.name,
+                    item.rating,
+                    item.takeagain,
+                    item.difficulty
             )
             this.addTodo( newItem )
         }

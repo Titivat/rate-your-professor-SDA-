@@ -42,7 +42,7 @@ class RattingProfessorPage : AppCompatActivity() {
 
         val data = SummitModel(
                 "morpheus",
-                "leader"
+                "leader"    
         )
         this.callApi(data)
     }

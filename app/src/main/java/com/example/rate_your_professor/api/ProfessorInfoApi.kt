@@ -12,7 +12,7 @@ import retrofit2.http.POST
 
 
 interface ProfessorInfoApi{
-    @GET("users?page=2")
+    @GET("api/professor/get")
     fun getProfessorInfo(): Call<ProfessorModel>
 
     @GET("unknown")
@@ -24,7 +24,7 @@ interface ProfessorInfoApi{
     companion object {
         operator fun invoke(): ProfessorInfoApi {
             return Retrofit.Builder()
-                .baseUrl("https://reqres.in/api/")
+                .baseUrl("https://kmitlsdaproject.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ProfessorInfoApi::class.java)
