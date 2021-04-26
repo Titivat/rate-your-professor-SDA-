@@ -241,7 +241,7 @@
         android:layout_width="108dp"
         android:layout_height="24dp"
         android:layout_marginTop="10dp"
-        android:max="6"
+        android:max="5"
         android:progress="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.935"
@@ -277,7 +277,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <Spinner
         android:id="@+id/etCouseCode"
         android:layout_width="114dp"
         android:layout_height="43dp"

@@ -2,24 +2,31 @@ package com.example.rate_your_professor.page
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rate_your_professor.api.ProfessorInfoApi
 import com.example.rate_your_professor.R
+import com.example.rate_your_professor.model.apiCall.couseCode.CouseCode
+import com.example.rate_your_professor.model.apiCall.studentComment.CommentData
 import com.example.rate_your_professor.model.apiCall.summitInfo.SummitModel
 import kotlinx.android.synthetic.main.activity_ratting_profesos.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.collections.toTypedArray as toTypedArray1
 
 class RattingProfessorPage : AppCompatActivity() {
+    private lateinit var couseCodeAdapter: ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ratting_profesos)
+        val intent = intent
+        val teacherInfo = intent.getSerializableExtra("TeacherInfo") as HashMap<String, String>?
 
         bthBack.setOnClickListener{
-            val intent = intent
-            val teacherInfo = intent.getSerializableExtra("TeacherInfo") as HashMap<String, String>?
             startActivity(Intent(this, ProfesorInfoPage::class.java).putExtra("TeacherInfo", teacherInfo))
         }
 
@@ -27,11 +34,19 @@ class RattingProfessorPage : AppCompatActivity() {
             this.handleSummit()
         }
 
+        var couseCodes = ArrayList<String>()
+        this.getCouse(teacherInfo?.get("id") )
+
+        couseCodeAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, couseCodes)
+        couseCodeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        etCouseCode.adapter = couseCodeAdapter;
+
     }
 
     private fun handleSummit(){
         val comment = etComment.text.toString()
-        val causeCode = etCouseCode.text.toString()
+        val causeCode = etCouseCode.selectedItem.toString()
         val rateProfessor = sbRate.progress
         val grade = spGrade.selectedItem.toString()
         val difficulty = sbDifficulty.progress
@@ -41,13 +56,21 @@ class RattingProfessorPage : AppCompatActivity() {
         val haveAttendance = swAttendance.isChecked
 
         val data = SummitModel(
-                "morpheus",
-                "leader"    
+                causeCode,
+                rateProfessor.toFloat(),
+                difficulty.toFloat(),
+                haveTakeAgain,
+                haveTakeCredit,
+                haveTextBook,
+                haveAttendance,
+                grade,
+                comment
         )
-        this.callApi(data)
+
+        this.summitData(data)
     }
 
-    private fun callApi(data: SummitModel) {
+    private fun summitData(data: SummitModel) {
         ProfessorInfoApi().postSummit( data ).enqueue( object : Callback<SummitModel> {
             override fun onFailure(call: Call<SummitModel>, t: Throwable) {
                 t.printStackTrace()
@@ -60,5 +83,31 @@ class RattingProfessorPage : AppCompatActivity() {
             }
 
         })
+    }
+
+    private fun getCouse(couseId: String?){
+        if (couseId != null) {
+            ProfessorInfoApi().getCouseCode( couseId ).enqueue(object : Callback<CouseCode> {
+                override fun onFailure(call: Call<CouseCode>, t: Throwable) {
+                    t.printStackTrace()
+                }
+
+                override fun onResponse(call: Call<CouseCode>, response: Response<CouseCode>) {
+                    response.body()?.let {
+                        getResponse( it )
+                    }
+                }
+
+            })
+        }
+    }
+
+    private fun getResponse(codesList: CouseCode){
+        Log.v("xxxxxx", "element" )
+        var list = listOf<String>()
+        list  = codesList.codes
+        for( item in list){
+            couseCodeAdapter.add( item )
+        }
     }
 }

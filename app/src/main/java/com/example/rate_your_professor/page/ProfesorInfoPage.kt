@@ -41,25 +41,27 @@ class ProfesorInfoPage : AppCompatActivity() {
 
         studentCommentAdapter = StudentAdapter(mutableListOf())
 
-        this.callApi()
+        this.callApi( teacherInfo?.get("id") )
 
         rvStudentComment.adapter = studentCommentAdapter
         rvStudentComment.layoutManager = LinearLayoutManager( this)
 
     }
 
-    private fun callApi(){
-        ProfessorInfoApi().getStudentCommentInfo().enqueue(object : Callback<StudentComment> {
-            override fun onFailure(call: Call<StudentComment>, t: Throwable) {
-                t.printStackTrace()
-            }
-
-            override fun onResponse(call: Call<StudentComment>, response: Response<StudentComment>) {
-                response.body()?.let {
-                    studentCommentAdapter.setTeacherInfo(it)
+    private fun callApi(id: String?){
+        if (id != null) {
+            ProfessorInfoApi().getStudentCommentInfo( id ).enqueue(object : Callback<StudentComment> {
+                override fun onFailure(call: Call<StudentComment>, t: Throwable) {
+                    t.printStackTrace()
                 }
-            }
 
-        })
+                override fun onResponse(call: Call<StudentComment>, response: Response<StudentComment>) {
+                    response.body()?.let {
+                        studentCommentAdapter.setTeacherInfo(it)
+                    }
+                }
+
+            })
+        }
     }
 }

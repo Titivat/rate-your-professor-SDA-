@@ -34,18 +34,18 @@ class StudentAdapter( private val studentCommentList: MutableList<StudentCommnet
 
     fun setTeacherInfo(studentComment: StudentComment) {
         var list = listOf<CommentData>()
-        list  = studentComment.data
+        list  = studentComment.ratings
 
         for (item in list) {
             var newItem = StudentCommnetInfo(
-                    item.color,
-                    "Yes",
-                    "Not Mandatory",
-                    "A",
-                    "No",
-                    "Make no mistake, this will most likely be the most difficult class you will take at the B-school. The class builds on itself and it is critical that you keep up with the work. Rely on the example problems for quizzes and go to TA office hours. Haug is a caring professor, even if the grades don't reflct that.\n",
-                    "5.0",
-                    "5.0"
+                    item.code,
+                    item.credit.toString(),
+                    item.attendance.toString(),
+                    item.grade,
+                    item.textbook.toString(),
+                    item.comments,
+                    item.difficulty.toString(),
+                    item.rating.toString()
             )
             this.addTodo( newItem )
         }

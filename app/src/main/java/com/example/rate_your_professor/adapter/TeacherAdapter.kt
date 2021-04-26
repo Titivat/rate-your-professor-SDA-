@@ -43,9 +43,10 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
 
         for (item in list) {
             var newItem = TeacherInfo(
+                    item.id,
                     item.name,
                     item.rating,
-                    item.takeagain,
+                    item.takeagain * 100,
                     item.difficulty
             )
             this.addTodo( newItem )
@@ -66,6 +67,7 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
             val teacherName = curTodo.teacherName
             val takeAgainPercent = curTodo.wouldTakeAgainPercen.toString()
             val difficultyLevel = curTodo.levelOfDifficulty.toString()
+            val id = curTodo.id.toString()
 
             tvTeacherItemName.text = teacherName
             tvTeacherItemRatting.text = ("$ratting/5")
@@ -76,6 +78,7 @@ class TeacherAdapter( private val teacherList: MutableList<TeacherInfo> ) : Recy
 
             teacherItem.setOnClickListener {
                 val teacherInfo = HashMap<String, String>()
+                teacherInfo["id"] = id
                 teacherInfo["ratting"] = ratting
                 teacherInfo["teacherName"] = teacherName
                 teacherInfo["takeAgainPercent"] = takeAgainPercent

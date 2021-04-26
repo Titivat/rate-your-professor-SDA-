@@ -4,6 +4,13 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class SummitModel(
-    val name: String,
-    val job: String
+    val course_code: String,
+    val rating: Float,
+    val difficulty: Float,
+    val takeagain: Boolean,
+    val credit: Boolean,
+    val textbook: Boolean,
+    val attendance: Boolean,
+    val grade: String,
+    val comments: String
 )
