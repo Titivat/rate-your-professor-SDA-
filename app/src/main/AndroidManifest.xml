@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rate_Your_Professor">
-        <activity android:name=".page.RattingProfesorPage"></activity>
+        <activity android:name=".page.RattingProfessorPage"></activity>
         <activity android:name=".page.MainActivityPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

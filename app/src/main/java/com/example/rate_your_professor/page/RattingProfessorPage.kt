@@ -2,7 +2,6 @@ package com.example.rate_your_professor.page
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rate_your_professor.api.ProfessorInfoApi
@@ -13,7 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RattingProfesorPage : AppCompatActivity() {
+class RattingProfessorPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ratting_profesos)
@@ -30,7 +29,7 @@ class RattingProfesorPage : AppCompatActivity() {
 
     }
 
-    fun handleSummit(){
+    private fun handleSummit(){
         val comment = etComment.text.toString()
         val causeCode = etCouseCode.text.toString()
         val rateProfessor = sbRate.progress
@@ -56,7 +55,7 @@ class RattingProfesorPage : AppCompatActivity() {
 
             override fun onResponse(call: Call<SummitModel>, response: Response<SummitModel>) {
                 if (response.isSuccessful){
-                    Toast.makeText(this@RattingProfesorPage,"Successful",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RattingProfessorPage,"Successful",Toast.LENGTH_SHORT).show()
                 }
             }
 

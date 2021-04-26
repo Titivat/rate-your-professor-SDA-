@@ -2,14 +2,12 @@ package com.example.rate_your_professor.page
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rate_your_professor.api.ProfessorInfoApi
 import com.example.rate_your_professor.R
 import com.example.rate_your_professor.adapter.StudentAdapter
 import com.example.rate_your_professor.model.apiCall.studentComment.StudentComment
-import com.example.rate_your_professor.model.pageList.StudentCommnetInfo
 import kotlinx.android.synthetic.main.profesor_information_page.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,6 +20,7 @@ class ProfesorInfoPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.profesor_information_page)
+
         val intent = intent
         val teacherInfo = intent.getSerializableExtra("TeacherInfo") as HashMap<String, String>?
 
@@ -35,24 +34,18 @@ class ProfesorInfoPage : AppCompatActivity() {
         }
 
         btnRateProfessor.setOnClickListener{
-            val intent = Intent(this, RattingProfesorPage::class.java)
+            val intent = Intent(this, RattingProfessorPage::class.java)
             intent.putExtra("TeacherInfo", teacherInfo)
             startActivity(intent)
         }
 
-        studentCommentAdapter =
-            StudentAdapter(mutableListOf())
+        studentCommentAdapter = StudentAdapter(mutableListOf())
 
-        this.requestApi()
+        this.callApi()
 
         rvStudentComment.adapter = studentCommentAdapter
         rvStudentComment.layoutManager = LinearLayoutManager( this)
 
-    }
-
-    fun requestApi(){
-
-        this.callApi()
     }
 
     private fun callApi(){
