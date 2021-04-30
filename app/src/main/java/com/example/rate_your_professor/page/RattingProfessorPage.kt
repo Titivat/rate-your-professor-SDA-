@@ -30,6 +30,8 @@ class RattingProfessorPage : AppCompatActivity() {
             startActivity(Intent(this, ProfesorInfoPage::class.java).putExtra("TeacherInfo", teacherInfo))
         }
 
+        ratingTitle.text = "Rating"
+
         btnSummit.setOnClickListener{
             this.handleSummit()
         }

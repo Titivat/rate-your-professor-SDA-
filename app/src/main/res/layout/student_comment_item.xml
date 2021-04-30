@@ -167,23 +167,20 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/tvStudentCommentDifficulty"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="10dp"
-        android:background="@color/decorateColor"
-        android:gravity="center"
-        android:padding="3dp"
-        android:text="5.0"
-        android:textColor="@color/black"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/vRectangleView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tvStudentCommentAttendance"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
-        tools:ignore="MissingConstraints" />
+            android:id="@+id/tvStudentCommentDifficulty"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="84dp"
+            android:background="@color/decorateColor"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="5.0"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/vRectangleView"
+            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView16"

@@ -66,8 +66,8 @@ class StudentAdapter( private val studentCommentList: MutableList<StudentCommnet
             tvStudentCommentAttendance.text = curTodo.attendance
             tvStudentCommentGrade.text = curTodo.grade
             tvStudentCommentTextBook.text = curTodo.textBook
-            tvStudentCommentRatting.text = curTodo.quality
-            tvStudentCommentDifficulty.text = curTodo.ratting
+            tvStudentCommentRatting.text = curTodo.ratting
+            tvStudentCommentDifficulty.text = curTodo.quality
             tvStudentCommentComment.text = curTodo.comment
         }
 
